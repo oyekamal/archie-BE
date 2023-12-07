@@ -14,6 +14,8 @@ from .serializers import (
 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
+from rest_framework import filters
+from django_filters import rest_framework as drf_filters
 from rest_framework.response import Response
 from rest_framework import status
 from .core_login import create_consolidated_question
@@ -22,16 +24,25 @@ from .core_login import create_consolidated_question
 class CreatorQuestionViewSet(viewsets.ModelViewSet):
     queryset = CreatorQuestion.objects.all()
     serializer_class = CreatorQuestionSerializer
+    filter_backends = [filters.SearchFilter, drf_filters.DjangoFilterBackend]
+    filterset_fields = ["short_name"]
+    search_fields = ["short_name"]
 
 
 class CreatorQuestionGroupingViewSet(viewsets.ModelViewSet):
     queryset = CreatorQuestionGrouping.objects.all()
     serializer_class = CreatorQuestionGroupingSerializer
+    filter_backends = [filters.SearchFilter, drf_filters.DjangoFilterBackend]
+    filterset_fields = ["question"]
+    search_fields = ["question"]
 
 
 class CreatorOutputViewSet(viewsets.ModelViewSet):
     queryset = CreatorOutput.objects.all()
     serializer_class = CreatorOutputSerializer
+    filter_backends = [filters.SearchFilter, drf_filters.DjangoFilterBackend]
+    filterset_fields = ["label"]
+    search_fields = ["label"]
 
     def create(self, request, *args, **kwargs):
         data = request.data  # Assuming the data is sent in the request body
@@ -71,3 +82,6 @@ class CreatorOutputViewSet(viewsets.ModelViewSet):
 class ConsolidatedQuestionsViewSet(viewsets.ModelViewSet):
     queryset = ConsolidatedQuestions.objects.all()
     serializer_class = ConsolidatedQuestionsSerializer
+    filter_backends = [filters.SearchFilter, drf_filters.DjangoFilterBackend]
+    filterset_fields = ["short_name", "user", "questoin_group"]
+    search_fields = ["short_name", "user", "questoin_group"]
