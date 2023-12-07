@@ -5,15 +5,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('creator', '0004_testquestionlabal_testquestionlabelgroup_and_more'),
+        ("creator", "0004_testquestionlabal_testquestionlabelgroup_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='testcreatorcontent',
-            name='creator_request',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='creator.testcreatorrequest'),
+            model_name="testcreatorcontent",
+            name="creator_request",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="creator.testcreatorrequest",
+            ),
         ),
     ]

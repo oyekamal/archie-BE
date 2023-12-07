@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('creator', '0014_consolidatedquestions_user'),
+        ("creator", "0014_consolidatedquestions_user"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='creatorrequest',
-            name='short_name',
-            field=models.CharField(default='', max_length=255),
+            model_name="creatorrequest",
+            name="short_name",
+            field=models.CharField(default="", max_length=255),
         ),
     ]

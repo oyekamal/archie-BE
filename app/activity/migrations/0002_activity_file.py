@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('activity', '0001_initial'),
+        ("activity", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='activity',
-            name='file',
-            field=models.FileField(blank=True, null=True, upload_to='activities/'),
+            model_name="activity",
+            name="file",
+            field=models.FileField(blank=True, null=True, upload_to="activities/"),
         ),
     ]

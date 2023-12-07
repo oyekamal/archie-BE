@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('creator', '0002_creatorquestionlabel_remove_creator_short_name_and_more'),
+        ("creator", "0002_creatorquestionlabel_remove_creator_short_name_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creator',
-            name='short_name',
+            model_name="creator",
+            name="short_name",
             field=models.CharField(default=1, max_length=50),
             preserve_default=False,
         ),

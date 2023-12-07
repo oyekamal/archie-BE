@@ -4,15 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('activity', '0006_activity_summary'),
+        ("activity", "0006_activity_summary"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='activity',
-            old_name='is_private',
-            new_name='private',
+            model_name="activity",
+            old_name="is_private",
+            new_name="private",
         ),
     ]

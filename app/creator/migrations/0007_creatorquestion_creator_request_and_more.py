@@ -5,25 +5,39 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('creator', '0006_rename_testcreatorcontent_creatorcontent_and_more'),
+        ("creator", "0006_rename_testcreatorcontent_creatorcontent_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='creatorquestion',
-            name='creator_request',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='creator.creatorrequest'),
+            model_name="creatorquestion",
+            name="creator_request",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="creator.creatorrequest",
+            ),
         ),
         migrations.AlterField(
-            model_name='creatorquestion',
-            name='creator',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='creator.creator'),
+            model_name="creatorquestion",
+            name="creator",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="creator.creator",
+            ),
         ),
         migrations.AlterField(
-            model_name='creatorquestion',
-            name='creator_question_label',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='creator.creatorquestionlabel'),
+            model_name="creatorquestion",
+            name="creator_question_label",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="creator.creatorquestionlabel",
+            ),
         ),
     ]

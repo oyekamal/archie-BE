@@ -9,12 +9,14 @@ from activity.models import Activity
 
 
 def call_back(task):
-    
     print("Activity created..!")
-    Activity.objects.create(title=task.result.get("short_name"),
-                                content=task.result.get("activity"),
-                                owner=task.result.get("user"))
-    
+    Activity.objects.create(
+        title=task.result.get("short_name"),
+        content=task.result.get("activity"),
+        owner=task.result.get("user"),
+    )
+
+
 @receiver(post_save, sender=ConsolidatedQuestions)
 def creator_question_signal(sender, instance, **kwargs):
     # if instance and kwargs.get('created'):
@@ -22,8 +24,8 @@ def creator_question_signal(sender, instance, **kwargs):
         question_text = instance.question
 
         data = {
-            "question_text":question_text,
+            "question_text": question_text,
             "short_name": instance.short_name + ": activity",
-            "user": instance.user
+            "user": instance.user,
         }
         async_task(activity_generate, data, hook=call_back)

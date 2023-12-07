@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('activity', '0005_keyusage'),
+        ("activity", "0005_keyusage"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='activity',
-            name='summary',
+            model_name="activity",
+            name="summary",
             field=models.TextField(blank=True, null=True),
         ),
     ]

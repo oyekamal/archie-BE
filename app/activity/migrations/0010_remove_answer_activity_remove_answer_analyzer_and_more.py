@@ -4,70 +4,69 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('activity', '0009_alter_activity_options_alter_analyzer_options_and_more'),
+        ("activity", "0009_alter_activity_options_alter_analyzer_options_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='answer',
-            name='activity',
+            model_name="answer",
+            name="activity",
         ),
         migrations.RemoveField(
-            model_name='answer',
-            name='analyzer',
+            model_name="answer",
+            name="analyzer",
         ),
         migrations.RemoveField(
-            model_name='answer',
-            name='question',
+            model_name="answer",
+            name="question",
         ),
         migrations.RemoveField(
-            model_name='questioninanalyzer',
-            name='analyzer',
+            model_name="questioninanalyzer",
+            name="analyzer",
         ),
         migrations.RemoveField(
-            model_name='questioninanalyzer',
-            name='question',
+            model_name="questioninanalyzer",
+            name="question",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='analyzer',
+            model_name="activity",
+            name="analyzer",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='analyzer_language',
+            model_name="activity",
+            name="analyzer_language",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='file',
+            model_name="activity",
+            name="file",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='is_universal',
+            model_name="activity",
+            name="is_universal",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='is_visible',
+            model_name="activity",
+            name="is_visible",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='language',
+            model_name="activity",
+            name="language",
         ),
         migrations.RemoveField(
-            model_name='activity',
-            name='url',
+            model_name="activity",
+            name="url",
         ),
         migrations.DeleteModel(
-            name='Analyzer',
+            name="Analyzer",
         ),
         migrations.DeleteModel(
-            name='Answer',
+            name="Answer",
         ),
         migrations.DeleteModel(
-            name='Question',
+            name="Question",
         ),
         migrations.DeleteModel(
-            name='QuestionInAnalyzer',
+            name="QuestionInAnalyzer",
         ),
     ]

@@ -4,30 +4,32 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('activity', '0008_rename_description_activity_content'),
+        ("activity", "0008_rename_description_activity_content"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='activity',
-            options={'ordering': ['-created_at'], 'verbose_name_plural': 'Activities'},
+            name="activity",
+            options={"ordering": ["-created_at"], "verbose_name_plural": "Activities"},
         ),
         migrations.AlterModelOptions(
-            name='analyzer',
-            options={'ordering': ['-created_at'], 'verbose_name_plural': 'Analyzers'},
+            name="analyzer",
+            options={"ordering": ["-created_at"], "verbose_name_plural": "Analyzers"},
         ),
         migrations.AlterModelOptions(
-            name='answer',
-            options={'ordering': ['-created_at']},
+            name="answer",
+            options={"ordering": ["-created_at"]},
         ),
         migrations.AlterModelOptions(
-            name='question',
-            options={'ordering': ['-created_at']},
+            name="question",
+            options={"ordering": ["-created_at"]},
         ),
         migrations.AlterModelOptions(
-            name='questioninanalyzer',
-            options={'ordering': ['-created_at'], 'verbose_name_plural': 'QuestionInAnalyzers'},
+            name="questioninanalyzer",
+            options={
+                "ordering": ["-created_at"],
+                "verbose_name_plural": "QuestionInAnalyzers",
+            },
         ),
     ]
